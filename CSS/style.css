@@ -31,7 +31,7 @@ header {
     height: 120px;
     position: fixed;
     display: flex;
-    background-color: #121212;
+    background-color: #121212bf;
     justify-content: space-between;
     align-items: center;
     padding: 0 80px;
@@ -108,6 +108,13 @@ header nav {
     0 0 .20rem #b22a2a78, 
     0 0 0.30rem #ff7800;
     color: #FF3000; 
+}
+
+.neon-text-yellow {
+    text-shadow:
+    0 0 .20rem #b2502a78, 
+    0 0 0.30rem #ff9b00;
+    color: #FFCB00; 
 }
 
 
@@ -199,7 +206,7 @@ p {
     width: 100%;
     max-width: 900px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 80px;
 }
