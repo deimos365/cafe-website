@@ -1,176 +1,87 @@
-* {
-    box-sizing: border-box;
-}
-
-
-body {
-    margin: 0 0 0 0;
-    background-color: #001414;
-    font-family: "Balsamiq Sans";
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-image: url("../images/background-cafe.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-header {
-    width: 100%;
-    height: 120px;
-    position: fixed;
-    display: flex;
-    background-color: #121212bf;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 80px;
-    z-index: 1;
-    border-bottom: #FF3000 2px solid;
-}
-
-main {
-    padding: 120px 80px 0;
-    flex: 1;
+.section {
+    margin-top: 20px;
+    width: 98%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+    height: auto;
+    padding: 30px 0;
 }
 
-.h2 {
-    display: inline-block;
-    padding: 50px;
-    font-size: 2em;
+.best-sellers {
+    background-color: #f8f4ec;
+    border: 1px solid black;
 }
 
-.menu-container {
+.best-sellers h2 {
+    align-self: center;
+    margin-left: 0;
+}
+
+.menu-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    width: 100%;
+    width: 80%;
+    gap: 20px;
+    margin-top: 30px;
 }
 
-.background {
-    background-color: #121212;
-    width: 100%;
-    height: auto;
-    
-    aspect-ratio: 4 / 5;
-    margin-bottom: 20px;
-}
-
-.card-container {
-    width: 100%;
-    height: auto;
-    
-    aspect-ratio: 4 / 5;
+.menu-item {
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid #6f4e37;
+    overflow: hidden;
+    background-color: #fff;
+    color: #6f4e37;
+    min-width: 0;
 }
 
-.card-image {
+.menu-item img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
 
-.card-description {
+.menu-desc {
+    font-size: 1.3em;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: auto;
-    flex: 1;
-    padding: 0 15px 0;
-}
-
-h3 {
-    margin: 0%;
-    font-size: 1.5em;
-}
-
-.price {
-    font-size: 1.2em;
-}
-
-
-footer {
-    width: 100%;
-    height: 70px;
-    background-color: #121212;
-    display: grid;
-    place-items: center;
-    border-top: #FF3000 2px solid;
-}
-
-.footer-container {
-    display: flex;
-}
-
-nav {
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.header-logo-0 {
-    width: 210px;
-    height: 90px;
-}
-
-.header-logo {
-    width: 200px;
-    height: 80px;
-    font-size: 2rem;
-}
-
-a {
-    color: #fff;
-}
-
-.neon-text-blue {
-    text-shadow:
-    0 0 .20rem #fff7, 
-    0 0 0.30rem #14f7ff;
-    color: #14f7ff;
-}
-
-.neon-text-red {
-    text-shadow:
-    0 0 .20rem #b22a2a78, 
-    0 0 0.30rem #ff7800;
-    color: #FF3000; 
-}
-
-.neon-text-yellow {
-    text-shadow:
-    0 0 .20rem #b2502a78, 
-    0 0 0.30rem #ff9b00;
-    color: #FFCB00; 
-}
-
-.neon-box {
-    box-shadow: 
-    inset 0 0 .5rem #14f7ff,
-    0 0 .5rem #14f7ff;
-    border: #14f7ff 0.125rem solid;
-    border-radius: 0.25rem;
-    position: relative;
-    /* padding: 0.25em 1em; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 5px 10px 10px;
 }
 
-p {
-    margin: 0px;
+.menu-desc h3 {
+    font-size: 1.3em;
+    line-height: 1.2;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.menu-desc-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2% 7%;
+    align-items: center;
+    gap: 15%;
+}
+
+.menu-desc-text {
+    align-self: flex-start;
+    min-width: 0;
+}
+
+main > h1 {
+    font-size: 3em;
+    margin: 50px 0;
+}
+
+h2 {
+    font-size: 3em;
+    align-self: flex-start;
+    margin-left: 10%;
 }

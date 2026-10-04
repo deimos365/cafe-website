@@ -3,99 +3,151 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Street Food</title>
-		<link
-			rel="shortcut icon"
-			type="image/x-icon"
-			href="images/favicons/android-chrome-512x512.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="images/favicons/apple-touch-icon.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="images/favicons/favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="images/favicons/favicon-16x16.png"
-		/>
+		<title>Yummy Cafe</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="manifest" href="images/favicons/site.webmanifest" />
-		<link rel="stylesheet" href="CSS/fonts.css" />
-		<link rel="stylesheet" href="CSS/style.css" />
+		<link rel="stylesheet" href="css/fonts.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/responsive.css">
+
 	</head>
 	<body>
 		<header>
-			<div class="neon-box header-logo-0">
-				<div class="header-logo neon-box neon-text-red">
-					<p>STREET</p>
-					<p>FOOD</p>
-				</div>
-			</div>
+			<div class="header-icon">
+                <img src="images/icon-image.jpg" alt="cafe-icon">
+                <p>YUMMY CAFE</p>
+            </div>
 			<nav>
-				<a href="index.html" class="neon-text-yellow">Home</a>
-                <a href="pages/menu.html">Menu</a>
-                <a href="pages/gallery.html">Gallery</a>
-                <a href="pages/contact.html">Contact</a>
+				<a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About</a>
+                <a href="booking.html">Booking</a>
 			</nav>
+            <div class="book-now">
+                <a href="booking.html">BOOK NOW</a>
+            </div>
 		</header>
 		<main>
-			<section class="hero-screen">
-				<div class="welcome neon-box neon-text-blue">
-					<p class="welcome-tag">Authentic Asian Street Food</p>
-					<h1 class="neon-text-red">Welcome to Street Food</h1>
-					<p class="welcome-text">
-						Grilled skewers, steaming dumplings and noodles tossed to order —
-						straight from the night market to your plate.
-					</p>
-					<a href="pages/menu.html" class="btn neon-box neon-text-red"
-						>See the Menu</a
-					>
+			<section class="hero-section">
+                <article class="hero-article hero-1">
+					<h1>ESCAPE THE CHAOS, EMBRACE YUMMY</h1>
+					<p>In Yummy cafe we believe that the tasty coffee can make any day brighter, calmer, and better. Enjoy the taste of the best coffee in town.</p>
+					<img src="images/index/index-img1.jpg" alt="tasty coffee">
+					<div class="hero-1-1">
+						<p>Try Exclusive tastes before the end of October!</p>
+						<a class="button-link" href="menu.html">View Our Menu</a>
+					</div>
+				</article>
+                <article class="hero-article hero-2">
+					<img src="images/index/index-img2.jpg" alt="cafe img">
+				</article>
+            </section>
+			<section class="best-sellers section">
+                <h2>Best Sellers</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="images/menu/menu-img13.jpg" alt="cacao">
+                        <div class="menu-desc">
+                            <h3>Banana Crepe</h3>
+                            <div class="menu-desc-1">
+                                <p class="menu-desc-text">Tasty yummy yum yum yum yum yum yum yum</p>
+                                <p>10$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/menu/menu-img7.jpg" alt="cacao">
+                        <div class="menu-desc">
+                            <h3>Banana-Caramel</h3>
+                            <div class="menu-desc-1">
+                                <p class="menu-desc-text">Tasty yummy yum yum yum yum yum yum yum</p>
+                                <p>10$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/menu/menu-img8.jpg" alt="cacao">
+                        <div class="menu-desc">
+                            <h3>Berry Pancake</h3>
+                            <div class="menu-desc-1">
+                                <p class="menu-desc-text">Tasty yummy yum yum yum yum yum yum yum</p>
+                                <p>10$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/menu/menu-img3.jpg" alt="cacao">
+                        <div class="menu-desc">
+                            <h3>Cream Strawberry</h3>
+                            <div class="menu-desc-1">
+                                <p class="menu-desc-text">Tasty yummy yum yum yum yum yum yum yum</p>
+                                <p>10$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+			<section class="why-us">
+                <p>Why us?</p>
+				<h2>WE DONT JUST SERVE COFFEE; WE GIVE GOOD MOOD.</h2>
+				<div class="why-us-grid">
+					<div class="grid-item-1">
+						<img src="images/index/index-img3.jpg" alt="barista">
+					</div>
+					<div class="grid-item-2">
+						<img src="images/index/index-img4.jpg" alt="clients">
+					</div>
+					<div class="grid-item-3 grid-item-text">
+						<p>At Yummy Cafe our mission is to give clients a feeling that they are always welcome, in an environment where everyone can get what they want.</p>
+					</div>
+					<div class="grid-item-4 grid-item-text">
+						<p>Our goal is to give our clients warmth and comfort.</p>
+					</div>
+					<div class="grid-item-5 grid-item-text">
+						<p>Just drink a coffee and relax, in our cafe you can work all day, find people to talk or just enjoy your morning coffee.</p>
+					</div>
+					<div class="grid-item-6">
+						<img src="images/index/idex-img5.jpg" alt="poster">
+					</div>
 				</div>
-			</section>
-			<section class="flavors">
-				<div class="flavor-card neon-box">
-					<h2 class="h2 neon-text-red">Explore Our Flavors</h2>
-					<p>
-						Every stall is built around one dish someone's been perfecting for
-						years — charcoal skewers, hand-folded dumplings, noodles tossed in a
-						wok hot enough to sing. We didn't invent any of it, we just brought
-						it closer to home.
-					</p>
-					<a href="pages/menu.html" class="link neon-text-blue">Learn More</a>
-				</div>
-
-				<div class="flavor-card neon-box">
-					<h2 class="h2 neon-text-red">Find Your Favorite Dish</h2>
-					<p>
-						Not sure where to start? The menu is sorted by stall and spice
-						level, so you can go straight for the mala skewers or ease in with
-						something milder. New vendors rotate in every season.
-					</p>
-					<a href="pages/menu.html" class="link neon-text-blue">Learn More</a>
-				</div>
-
-				<div class="flavor-card neon-box">
-					<h2 class="h2 neon-text-red">Meet the Vendors</h2>
-					<p>
-						Behind every stall is someone who's been doing this for years. We
-						work with independent cooks and family stands, not chains, so every
-						dish still tastes like someone's actual recipe.
-					</p>
-					<a href="pages/gallery.html" class="link neon-text-blue">Learn More</a>
-				</div>
-			</section>
+            </section>
+			
 		</main>
 		<footer>
-			<div class="footer-container">
-				<p class="footer-copy">&copy; 2026 Street Food</p>
-			</div>
+			<div class="footer-contacts">
+                <p>Contacts:</p>
+                <a href="tel:+77786319258">+ 7 778 631 92 58</a>
+                <a href="tel:+77786319258">+ 7 778 631 92 59</a>
+                <p id="yummy-cafe">yummy-cafe@gmail.com</p>
+                <p id="rights">© 2024-2026 Yummy Cafe. All rights reserved.</p>
+            </div>
+            <div class="footer-container">
+                <div class="footer-links">
+                    <p>Company</p>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">ABOUT US</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">FORMATS</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">ROASTERY</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">FOOD FACTORY</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">JOBS</a>
+                </div>
+                <div class="footer-links">
+                    <p>For our guests</p>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">FOR GUESTS</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">COFFEE SHOP MAP</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">JOURNAL</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">CONTACTS</a>
+                </div>
+                <div class="footer-links">
+                    <p>For our partners</p>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">FRANCHISE</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">SUPLIES</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">OFFER A LOCATION</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">ADVERTISING</a>
+                </div>
+            </div>
 		</footer>
 	</body>
 </html>
