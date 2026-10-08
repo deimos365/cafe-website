@@ -174,3 +174,7 @@ h2 {
     min-height: 0;
     overflow: hidden;
 }
+
+main h2 {
+    margin-left: 0%;
+}
