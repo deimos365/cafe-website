@@ -1,0 +1,358 @@
+/* General page layout */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #ffeae9;
+    color: #363636;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    min-height: 80px;
+    width: 98%;
+    margin: 10px auto 0;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    gap: 20px;
+}
+
+header > .header-icon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.header-icon p {
+    font-weight: 700;
+}
+
+.header-icon img {
+    height: 50px;
+    width: auto;
+}
+
+header > nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+header nav a,
+.footer-links a {
+    text-transform: uppercase;
+}
+
+header nav a {
+    font-size: 0.85rem;
+}
+
+header nav a:hover {
+    color: #a64b35;
+}
+
+header > .book-now {
+    width: 200px;
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+.book-now > a {
+    display: block;
+    background-color: #f9dca4;
+    padding: 15px 20px;
+    color: #6f4e37;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 2px solid #6f4e37;
+    white-space: nowrap;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    width: 100%;
+}
+
+.contact-section {
+    max-width: 850px;
+    padding-top: 65px;
+    padding-bottom: 75px;
+}
+
+.contact-heading {
+    margin-bottom: 35px;
+}
+
+.contact-eyebrow {
+    color: #9b5c48;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.contact-heading h1 {
+    font-size: clamp(2.3rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.contact-heading > p:last-child {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Form card */
+.contact-card {
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(54, 54, 54, 0.08);
+}
+
+.contact-card .form-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.contact-card .form-control {
+    padding: 12px 14px;
+    border: 1px solid #d8d0cd;
+    border-radius: 10px;
+}
+
+.contact-card .form-control:focus {
+    border-color: #9b5c48;
+    box-shadow: 0 0 0 0.2rem rgba(155, 92, 72, 0.18);
+}
+
+.contact-card textarea {
+    resize: vertical;
+}
+
+.contact-card .form-text {
+    color: #777;
+}
+
+/* Buttons */
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn-send,
+.btn-reset {
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-send {
+    background-color: #6f4e37;
+    color: #fff;
+    border: 2px solid #6f4e37;
+}
+
+.btn-send:hover {
+    background-color: #533925;
+    color: #fff;
+}
+
+.btn-reset {
+    background-color: transparent;
+    color: #6f4e37;
+    border: 2px solid #6f4e37;
+}
+
+.btn-reset:hover {
+    background-color: #f9dca4;
+    color: #363636;
+}
+
+/* Footer */
+footer {
+    background-color: #363636;
+    color: #fff;
+    min-height: 300px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 30px 30px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    padding: 60px 6% 40px;
+}
+
+footer p {
+    color: lightgray;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1.1rem;
+}
+
+.footer-contacts a {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    overflow-wrap: anywhere;
+}
+
+#yummy-cafe {
+    color: #fff;
+}
+
+#rights {
+    margin-top: 30px;
+    font-size: 0.85rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 0.9rem;
+}
+
+.footer-links p {
+    font-weight: 700;
+}
+
+.footer-links a:hover {
+    color: #f9dca4;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 20px;
+    }
+
+    header > .header-icon,
+    header > .book-now {
+        width: auto;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        padding: 40px 6%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    header > nav {
+        gap: 12px 16px;
+    }
+
+    .contact-section {
+        padding-top: 40px;
+        padding-bottom: 45px;
+    }
+
+    .contact-card {
+        padding: 24px 18px;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .contact-buttons .btn {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* Registration page */
+.register-section {
+    max-width: 850px;
+    padding-top: 65px;
+    padding-bottom: 75px;
+}
+
+.register-heading {
+    margin-bottom: 35px;
+}
+
+.register-heading h1 {
+    font-size: clamp(2.3rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.register-heading > p:last-child {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Keep radio buttons and checkboxes aligned */
+.contact-card .form-check {
+    margin-bottom: 8px;
+}
+
+.contact-card fieldset {
+    border: 1px solid #e5dcd8;
+    border-radius: 12px;
+    padding: 16px 18px;
+}
+
+.contact-card legend {
+    float: none;
+    width: auto;
+    padding: 0 5px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Registration responsive layout */
+@media (max-width: 600px) {
+    .register-section {
+        padding-top: 40px;
+        padding-bottom: 45px;
+    }
+}
