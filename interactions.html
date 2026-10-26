@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interactive Cafe | Yummy Cafe</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/interactions.css">
+
+    <script src="js/interactions.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="images/icon-image.jpg" alt="Yummy Cafe logo">
+            <span>YUMMY CAFE</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About</a>
+            <a href="booking.html">Booking</a>
+            <a href="contact.html">Contact</a>
+            <a href="register.html">Register</a>
+            <a href="interactions.html" aria-current="page">Interactive Features</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="page-intro">
+            <p class="eyebrow">YUMMY CAFE</p>
+            <h1>Interactive Cafe Experience</h1>
+            <p>
+                Explore our menu, discover information about our cafe,
+                and create your own list of favorite items.
+            </p>
+        </section>
+
+        <!-- task 0: select elements and update content -->
+        <section class="feature-section" id="task0">
+            <p class="task-label">TASK 0</p>
+            <h2>Welcome to Yummy Cafe</h2>
+            <p>
+                Enter your name to receive a personalized welcome message.
+            </p>
+
+            <form id="welcomeForm" class="inline-form">
+                <div class="form-group">
+                    <label for="visitorName">Your name</label>
+                    <input
+                        type="text"
+                        id="visitorName"
+                        name="visitorName"
+                        placeholder="Enter your name"
+                        autocomplete="given-name"
+                    >
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Say Hello
+                </button>
+            </form>
+
+            <p id="welcomeMessage" class="feedback" role="status" aria-live="polite">
+                Your welcome message will appear here.
+            </p>
+        </section>
+
+        <!-- task 1: change appearance with classes -->
+        <section class="feature-section" id="task1">
+            <p class="task-label">TASK 1</p>
+            <h2>Choose Your Theme</h2>
+            <p>
+                Switch between light and dark themes.
+            </p>
+
+            <button
+                type="button"
+                id="themeToggle"
+                class="primary-button"
+                aria-pressed="false"
+            >
+                Switch to Dark Theme
+            </button>
+
+            <p class="helper-text">
+                Click the button again to restore the light theme.
+            </p>
+        </section>
+
+        <!-- task 2: show and hide information -->
+        <section class="feature-section" id="task2">
+            <p class="task-label">TASK 2</p>
+            <h2>Frequently Asked Questions</h2>
+            <p>
+                Select a question to reveal its answer.
+            </p>
+
+            <div class="faq-list">
+                <article class="faq-item">
+                    <h3>
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="faqAnswer1"
+                        >
+                            What kind of coffee do you serve?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+
+                    <div id="faqAnswer1" class="faq-answer" hidden>
+                        <p>
+                            We offer espresso-based drinks, cappuccino,
+                            latte, Americano, and other cafe favorites.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <h3>
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="faqAnswer2"
+                        >
+                            Do you have desserts?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+
+                    <div id="faqAnswer2" class="faq-answer" hidden>
+                        <p>
+                            Yes. Our menu includes cakes, cookies,
+                            pastries, and other sweet treats.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <h3>
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="faqAnswer3"
+                        >
+                            Can I reserve a table?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+
+                    <div id="faqAnswer3" class="faq-answer" hidden>
+                        <p>
+                            Yes. Visit our Booking page to explore
+                            the available reservation options.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- task 3: filter content as the user types -->
+        <section class="feature-section" id="task3">
+            <p class="task-label">TASK 3</p>
+            <h2>Explore Our Menu</h2>
+            <p>
+                Search for a drink or dessert by its name.
+            </p>
+
+            <div class="form-group search-group">
+                <label for="menuSearch">Search menu items</label>
+                <input
+                    type="search"
+                    id="menuSearch"
+                    name="menuSearch"
+                    placeholder="Try coffee, latte, or cake..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <p id="searchCount" class="helper-text" aria-live="polite">
+                6 items found.
+            </p>
+
+            <p id="noResults" class="feedback" hidden>
+                No results found.
+            </p>
+
+            <div id="menuGrid" class="menu-grid">
+                <article class="menu-card" data-menu-item>
+                    <h3 class="menu-item-title">Espresso</h3>
+                    <p>Strong, concentrated coffee with a rich flavor.</p>
+                    <span class="menu-category">Coffee</span>
+                </article>
+
+                <article class="menu-card" data-menu-item>
+                    <h3 class="menu-item-title">Cappuccino</h3>
+                    <p>Espresso topped with steamed milk and foam.</p>
+                    <span class="menu-category">Coffee</span>
+                </article>
+
+                <article class="menu-card" data-menu-item>
+                    <h3 class="menu-item-title">Vanilla Latte</h3>
+                    <p>Smooth espresso with milk and vanilla flavor.</p>
+                    <span class="menu-category">Coffee</span>
+                </article>
+
+                <article class="menu-card" data-menu-item>
+                    <h3 class="menu-item-title">Iced Americano</h3>
+                    <p>Refreshing espresso served over ice and water.</p>
+                    <span class="menu-category">Cold Drinks</span>
+                </article>
+
+                <article class="menu-card" data-menu-item>
+                    <h3 class="menu-item-title">Chocolate Cake</h3>
+                    <p>Rich chocolate cake for a sweet break.</p>
+                    <span class="menu-category">Dessert</span>
+                </article>
+
+                <article class="menu-card" data-menu-item>
+                    <h3 class="menu-item-title">Butter Croissant</h3>
+                    <p>A flaky pastry that pairs perfectly with coffee.</p>
+                    <span class="menu-category">Pastry</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Task 4: create and remove elements -->
+        <section class="feature-section" id="task4">
+            <p class="task-label">TASK 4</p>
+            <h2>Your Favorite Menu Items</h2>
+            <p>
+                Add drinks or desserts to your personal favorites list.
+            </p>
+
+            <form id="favoriteForm" class="inline-form">
+                <div class="form-group">
+                    <label for="favoriteInput">Favorite item</label>
+                    <input
+                        type="text"
+                        id="favoriteInput"
+                        name="favoriteInput"
+                        placeholder="e.g. Caramel Latte"
+                    >
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Add Favorite
+                </button>
+            </form>
+
+            <p id="favoriteFeedback" class="feedback" role="status" aria-live="polite"></p>
+
+            <p id="favoriteCount" class="helper-text">
+                Favorites: 0
+            </p>
+
+            <ul id="favoriteList" class="favorite-list"></ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Yummy Cafe — Coffee, desserts, and good moments.</p>
+        <p>&copy; 2026 Yummy Cafe. All rights reserved.</p>
+    </footer>
+</body>
+</html>
