@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -41,7 +42,7 @@ header > .header-icon {
     gap: 10px;
     align-items: center;
     width: 200px;
-    
+    font-weight: 700;
 }
 
 .header-icon > img {
@@ -54,6 +55,12 @@ header > .header-icon {
 header > nav  {
     display: flex;
     gap: 30px;
+    font-weight: 600;
+
+}
+nav a:hover,
+nav a[aria-current="page"] {
+    color: #a65f43;
 }
 
 header > .book-now {

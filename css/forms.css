@@ -1,4 +1,6 @@
+
 /* General page layout */
+
 * {
     box-sizing: border-box;
 }
@@ -23,6 +25,7 @@ p {
 }
 
 /* Header */
+
 header {
     background-color: #fff;
     min-height: 80px;
@@ -65,10 +68,6 @@ header nav a,
     text-transform: uppercase;
 }
 
-header nav a {
-    font-size: 0.85rem;
-}
-
 header nav a:hover {
     color: #a64b35;
 }
@@ -92,6 +91,7 @@ header > .book-now {
 }
 
 /* Main content */
+
 main {
     flex: 1;
     width: 100%;
@@ -127,6 +127,7 @@ main {
 }
 
 /* Form card */
+
 .contact-card {
     background-color: #fff;
     border-radius: 24px;
@@ -158,7 +159,24 @@ main {
     color: #777;
 }
 
+/* Validation states */
+
+.contact-card .form-control.is-valid {
+    border-color: #198754;
+}
+
+.contact-card .form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+#formStatus {
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
 /* Buttons */
+
 .contact-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -195,6 +213,7 @@ main {
 }
 
 /* Footer */
+
 footer {
     background-color: #363636;
     color: #fff;
@@ -255,7 +274,9 @@ footer p {
 }
 
 /* Tablet */
+
 @media (max-width: 1024px) {
+
     header {
         flex-wrap: wrap;
         justify-content: center;
@@ -271,10 +292,13 @@ footer p {
         grid-template-columns: 1fr;
         padding: 40px 6%;
     }
+
 }
 
 /* Mobile */
+
 @media (max-width: 600px) {
+
     header {
         flex-direction: column;
         padding: 20px;
@@ -305,9 +329,11 @@ footer p {
         flex-direction: column;
         gap: 30px;
     }
+
 }
 
 /* Registration page */
+
 .register-section {
     max-width: 850px;
     padding-top: 65px;
@@ -329,7 +355,8 @@ footer p {
     line-height: 1.7;
 }
 
-/* Keep radio buttons and checkboxes aligned */
+/* Radio buttons and checkboxes */
+
 .contact-card .form-check {
     margin-bottom: 8px;
 }
@@ -350,9 +377,12 @@ footer p {
 }
 
 /* Registration responsive layout */
+
 @media (max-width: 600px) {
+
     .register-section {
         padding-top: 40px;
         padding-bottom: 45px;
     }
+
 }

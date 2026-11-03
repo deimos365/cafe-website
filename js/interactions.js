@@ -1,180 +1,182 @@
-// task 0: select elements and update content
+$(document).ready(function () {
 
-const welcomeForm = document.getElementById("welcomeForm");
-const visitorName = document.getElementById("visitorName");
-const welcomeMessage = document.querySelector("#welcomeMessage");
+    // TASK 0: Select elements and update content
 
-welcomeForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+    $("#welcomeForm").on("submit", function (event) {
+        event.preventDefault();
 
-    const name = visitorName.value.trim();
+        const name = $("#visitorName").val().trim();
 
-    if (name === "") {
-        welcomeMessage.textContent =
-            "Please enter your name before continuing.";
-        return;
-    }
+        if (name === "") {
+            $("#welcomeMessage").text(
+                "Please enter your name before continuing."
+            );
+            return;
+        }
 
-    welcomeMessage.textContent =
-        `Welcome to Yummy Cafe, ${name}! We hope you enjoy your visit.`;
-});
+        $("#welcomeMessage").text(
+            `Welcome to Yummy Cafe, ${name}! We hope you enjoy your visit.`
+        );
+    });
 
 
-// task 1: change appearance with classes
+    // TASK 1: Change appearance with classes
 
-const themeToggle = document.getElementById("themeToggle");
+    $("#themeToggle").on("click", function () {
+        $("body").toggleClass("dark-theme");
 
-themeToggle.addEventListener("click", function () {
-    document.body.classList.toggle("dark-theme");
+        const isDarkTheme = $("body").hasClass("dark-theme");
 
-    const isDarkTheme = document.body.classList.contains("dark-theme");
+        if (isDarkTheme) {
+            $(this).text("Switch to Light Theme");
+            $(this).attr("aria-pressed", "true");
+        } else {
+            $(this).text("Switch to Dark Theme");
+            $(this).attr("aria-pressed", "false");
+        }
+    });
 
-    if (isDarkTheme) {
-        themeToggle.textContent = "Switch to Light Theme";
-        themeToggle.setAttribute("aria-pressed", "true");
+
+// TASK 2: FAQ accordion
+
+$(".faq-question").on("click", function () {
+    const question = $(this);
+    const faqItem = question.closest(".faq-item");
+    const answer = faqItem.find(".faq-answer");
+
+    const isExpanded = question.attr("aria-expanded") === "true";
+
+    // Stop any animation currently running.
+    answer.stop(true, true);
+
+    if (isExpanded) {
+        answer.slideUp(300);
+        question.attr("aria-expanded", "false");
+        question.find(".faq-icon").text("+");
     } else {
-        themeToggle.textContent = "Switch to Dark Theme";
-        themeToggle.setAttribute("aria-pressed", "false");
+        answer.slideDown(300);
+        question.attr("aria-expanded", "true");
+        question.find(".faq-icon").text("−");
     }
+
+    // Second animation required by the assignment.
+    $("#faqStatus")
+        .stop(true, true)
+        .text("FAQ updated.")
+        .fadeIn(200)
+        .delay(1000)
+        .fadeOut(300);
 });
 
 
-// task 2: show and hide information
+    // TASK 3: Filter content as the user types
 
-const faqQuestions = document.querySelectorAll(".faq-question");
+    const menuItems = $("[data-menu-item]");
 
-faqQuestions.forEach(function (question) {
-    question.addEventListener("click", function () {
-        const answerId = question.getAttribute("aria-controls");
-        const answer = document.getElementById(answerId);
+    function filterMenuItems() {
+        const searchText = $("#menuSearch").val().trim().toLowerCase();
 
-        const isCurrentlyExpanded =
-            question.getAttribute("aria-expanded") === "true";
+        let matchingItems = 0;
 
-        // Reverse the current expanded state.
-        question.setAttribute(
-            "aria-expanded",
-            String(!isCurrentlyExpanded)
+        menuItems.each(function () {
+            const item = $(this);
+
+            const title = item
+                .find(".menu-item-title")
+                .text()
+                .trim()
+                .toLowerCase();
+
+            const matches = title.includes(searchText);
+
+            item.toggle(matches);
+
+            if (matches) {
+                matchingItems++;
+            }
+        });
+
+        $("#searchCount").text(
+            `${matchingItems} ${matchingItems === 1 ? "item" : "items"} found.`
         );
 
-        answer.hidden = isCurrentlyExpanded;
-
-        const icon = question.querySelector(".faq-icon");
-
-        if (icon !== null) {
-            icon.textContent = isCurrentlyExpanded ? "+" : "−";
-        }
-    });
-});
-
-
-// task 3: filter content as the user types
-
-const menuSearch = document.getElementById("menuSearch");
-const menuItems = document.querySelectorAll("[data-menu-item]");
-const searchCount = document.getElementById("searchCount");
-const noResults = document.getElementById("noResults");
-
-function filterMenuItems() {
-    const searchText = menuSearch.value.trim().toLowerCase();
-    let matchingItems = 0;
-
-    menuItems.forEach(function (item) {
-        const titleElement = item.querySelector(".menu-item-title");
-        const title = titleElement.textContent.trim().toLowerCase();
-
-        const matches = title.includes(searchText);
-
-        item.hidden = !matches;
-
-        if (matches) {
-            matchingItems++;
-        }
-    });
-
-    searchCount.textContent =
-        `${matchingItems} ${matchingItems === 1 ? "item" : "items"} found.`;
-
-    noResults.hidden = matchingItems !== 0;
-}
-
-menuSearch.addEventListener("input", filterMenuItems);
-
-// Initialize the count when the page loads.
-filterMenuItems();
-
-
-// task 4: create and remove elements
-
-const favoriteForm = document.getElementById("favoriteForm");
-const favoriteInput = document.getElementById("favoriteInput");
-const favoriteList = document.getElementById("favoriteList");
-const favoriteCount = document.getElementById("favoriteCount");
-const favoriteFeedback = document.getElementById("favoriteFeedback");
-
-function updateFavoriteCount() {
-    const totalFavorites = favoriteList.children.length;
-
-    favoriteCount.textContent =
-        `Favorites: ${totalFavorites}`;
-}
-
-favoriteForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const favoriteName = favoriteInput.value.trim();
-
-    if (favoriteName === "") {
-        favoriteFeedback.textContent =
-            "Please enter the name of a menu item.";
-        favoriteFeedback.style.color = "#c34c4c";
-        return;
+        $("#noResults").prop("hidden", matchingItems !== 0);
     }
 
-    // Create the list item.
-    const listItem = document.createElement("li");
-    listItem.classList.add("favorite-item");
+    $("#menuSearch").on("input", filterMenuItems);
 
-    // Create the name element.
-    const nameElement = document.createElement("span");
-    nameElement.classList.add("favorite-name");
-    nameElement.textContent = favoriteName;
+    // Initialize the count when the page loads.
+    filterMenuItems();
 
-    // Create the remove button.
-    const removeButton = document.createElement("button");
-    removeButton.type = "button";
-    removeButton.classList.add("remove-button");
-    removeButton.textContent = "Remove";
-    removeButton.setAttribute(
-        "aria-label",
-        `Remove ${favoriteName} from favorites`
-    );
 
-    // Remove only this specific list item.
-    removeButton.addEventListener("click", function () {
+    // TASK 4: Create and remove elements
+
+    function updateFavoriteCount() {
+        const totalFavorites = $("#favoriteList").children().length;
+
+        $("#favoriteCount").text(`Favorites: ${totalFavorites}`);
+
+        $("#favoriteEmpty").prop("hidden", totalFavorites !== 0);
+    }
+
+    $("#favoriteForm").on("submit", function (event) {
+        event.preventDefault();
+
+        const favoriteName = $("#favoriteInput").val().trim();
+
+        if (favoriteName === "") {
+            $("#favoriteFeedback")
+                .text("Please enter the name of a menu item.")
+                .css("color", "#c34c4c");
+
+            return;
+        }
+
+        // Create the list item and its contents.
+        const listItem = $("<li>").addClass("favorite-item");
+
+        const nameElement = $("<span>")
+            .addClass("favorite-name")
+            .text(favoriteName);
+
+        const removeButton = $("<button>")
+            .attr("type", "button")
+            .addClass("remove-button")
+            .attr("aria-label", `Remove ${favoriteName} from favorites`)
+            .text("Remove");
+
+        // Assemble the elements.
+        listItem.append(nameElement, removeButton);
+
+        // Add the item to the list.
+        $("#favoriteList").append(listItem);
+
+        updateFavoriteCount();
+
+        $("#favoriteFeedback")
+            .text(`${favoriteName} was added to your favorites.`)
+            .css("color", "var(--text-color)");
+
+        $("#favoriteForm")[0].reset();
+        $("#favoriteInput").trigger("focus");
+    });
+
+
+    // Delegated event handler for dynamically created buttons.
+    $("#favoriteList").on("click", ".remove-button", function () {
+        const listItem = $(this).closest("li");
+        const favoriteName = listItem.find(".favorite-name").text();
+
         listItem.remove();
 
         updateFavoriteCount();
 
-        favoriteFeedback.textContent =
-            `${favoriteName} was removed from your favorites.`;
-        favoriteFeedback.style.color = "var(--text-color)";
+        $("#favoriteFeedback")
+            .text(`${favoriteName} was removed from your favorites.`)
+            .css("color", "var(--text-color)");
     });
 
-    // Assemble and add the new item.
-    listItem.append(nameElement, removeButton);
-    favoriteList.append(listItem);
-
-    // Update the page after adding the item.
+    // Set the initial count.
     updateFavoriteCount();
 
-    favoriteFeedback.textContent =
-        `${favoriteName} was added to your favorites.`;
-    favoriteFeedback.style.color = "var(--text-color)";
-
-    favoriteForm.reset();
-    favoriteInput.focus();
 });
-
-// Set the initial count.
-updateFavoriteCount();

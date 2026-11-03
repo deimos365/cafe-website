@@ -11,28 +11,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/fonts.css">
+    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/interactions.css">
-
-    <script src="js/interactions.js" defer></script>
 </head>
 
 <body>
-    <header class="site-header">
-        <a class="brand" href="index.html">
-            <img src="images/icon-image.jpg" alt="Yummy Cafe logo">
-            <span>YUMMY CAFE</span>
-        </a>
-
-        <nav aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="about.html">About</a>
-            <a href="booking.html">Booking</a>
-            <a href="contact.html">Contact</a>
-            <a href="register.html">Register</a>
-            <a href="interactions.html" aria-current="page">Interactive Features</a>
-        </nav>
-    </header>
+    <header>
+			<div class="header-icon">
+                <img src="images/icon-image.jpg" alt="cafe-icon">
+                <p>YUMMY CAFE</p>
+            </div>
+			<nav>
+				<a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About</a>
+                <a href="booking.html">Booking</a>
+                <a href="contact.html">Contact us</a>
+                <a href="register.html">Register</a>
+                <a href="interactions.html" aria-current="page">Interactions</a>
+			</nav>
+            <div class="book-now">
+                <a href="booking.html">BOOK NOW</a>
+            </div>
+		</header>
 
     <main class="page-container">
         <section class="page-intro">
@@ -118,7 +119,7 @@
                         </button>
                     </h3>
 
-                    <div id="faqAnswer1" class="faq-answer" hidden>
+                    <div id="faqAnswer1" class="faq-answer">
                         <p>
                             We offer espresso-based drinks, cappuccino,
                             latte, Americano, and other cafe favorites.
@@ -139,7 +140,7 @@
                         </button>
                     </h3>
 
-                    <div id="faqAnswer2" class="faq-answer" hidden>
+                    <div id="faqAnswer2" class="faq-answer">
                         <p>
                             Yes. Our menu includes cakes, cookies,
                             pastries, and other sweet treats.
@@ -160,7 +161,7 @@
                         </button>
                     </h3>
 
-                    <div id="faqAnswer3" class="faq-answer" hidden>
+                    <div id="faqAnswer3" class="faq-answer">
                         <p>
                             Yes. Visit our Booking page to explore
                             the available reservation options.
@@ -168,6 +169,7 @@
                     </div>
                 </article>
             </div>
+            <p id="faqStatus" aria-live="polite"></p>
         </section>
 
         <!-- task 3: filter content as the user types -->
@@ -270,9 +272,40 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <p>Yummy Cafe — Coffee, desserts, and good moments.</p>
-        <p>&copy; 2026 Yummy Cafe. All rights reserved.</p>
-    </footer>
+    <footer>
+			<div class="footer-contacts">
+                <p>Contacts:</p>
+                <a href="tel:+77786319258">+ 7 778 631 92 58</a>
+                <a href="tel:+77786319258">+ 7 778 631 92 59</a>
+                <p id="yummy-cafe">yummy-cafe@gmail.com</p>
+                <p id="rights">© 2024-2026 Yummy Cafe. All rights reserved.</p>
+            </div>
+            <div class="footer-container">
+                <div class="footer-links">
+                    <p>Company</p>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">ABOUT US</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">FORMATS</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">ROASTERY</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">FOOD FACTORY</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">JOBS</a>
+                </div>
+                <div class="footer-links">
+                    <p>For our guests</p>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">FOR GUESTS</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">COFFEE SHOP MAP</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">JOURNAL</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">CONTACTS</a>
+                </div>
+                <div class="footer-links">
+                    <p>For our partners</p>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">FRANCHISE</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">SUPLIES</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">OFFER A LOCATION</a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">ADVERTISING</a>
+                </div>
+            </div>
+		</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/interactions.js"></script>
 </body>
 </html>
