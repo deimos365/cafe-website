@@ -63,6 +63,10 @@ nav a[aria-current="page"] {
     color: #a65f43;
 }
 
+footer a:hover {
+    color: #a65f43;
+}
+
 header > .book-now {
     width: 200px;
     display: flex;
