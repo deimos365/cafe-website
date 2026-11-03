@@ -112,7 +112,7 @@
 
     .hero-1 {
         padding: 50px;
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
     .hero-1 img {
@@ -694,6 +694,7 @@ summary:focus-visible {
     h2 {
         font-size: 3em;
         margin-left: 10%;
+        transform: scale(0.8);
     }
 }
 
