@@ -10,11 +10,12 @@
 		<link rel="manifest" href="images/favicons/site.webmanifest" />
 		<link rel="stylesheet" href="css/fonts.css" />
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/interactions.css" />
 		<link rel="stylesheet" href="css/booking.css" />
 		<link rel="stylesheet" href="css/responsive.css" />
 	</head>
 	<body>
-		<header>
+		<header class="shadow-custom-sm">
 			<div class="header-icon">
                 <img src="images/icon-image.jpg" alt="cafe-icon">
                 <p>YUMMY CAFE</p>
@@ -33,12 +34,12 @@
             </div>
 		</header>
 		<main>
-      <section class="step1">
+      <section class="step1 max-width shadow-custom-md">
         <h1>Ready to book?</h1>
         <h2>Step1: Choose location</h2>
         <img src="images/booking/booking-img1.jpg" alt="map">
       </section>
-      <section class="step2">
+      <section class="step2 max-width shadow-custom-md">
         <h2>Step2: Choose Time</h2>
         <form action="demo-result.html" method="get">
 
@@ -157,9 +158,10 @@
 </form>
       </section>
       <section class="faq">
-    <h2>Frequently Asked Questions</h2>
 
-    <details>
+    <!-- <h2>Frequently Asked Questions</h2> -->
+
+    <!-- <details>
         <summary>What are your opening hours?</summary>
         <p>
             We are open every day from 8:00 AM to 11:00 PM.
@@ -188,10 +190,85 @@
             We have several locations around the city. Visit our
             contact page for more information.
         </p>
-    </details>
+    </details> -->
+
+<!-- task 2: show and hide information -->
+        <section class="feature-section shadow-custom-md" id="task2">
+            <p class="task-label">FAQ</p>
+            <h2>Frequently Asked Questions</h2>
+            <p>
+                Select a question to reveal its answer.
+            </p>
+
+            <div class="faq-list">
+                <article class="faq-item">
+                    <h3>
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="faqAnswer1"
+                        >
+                            What are your opening hours?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+
+                    <div id="faqAnswer1" class="faq-answer">
+                        <p>
+                            We are open every day from 8:00 AM to 11:00 PM.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <h3>
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="faqAnswer2"
+                        >
+                            Do I need to book a table?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+
+                    <div id="faqAnswer2" class="faq-answer">
+                        <p>
+                            Booking is not required, but we recommend making a
+            reservation during busy hours.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <h3>
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="faqAnswer3"
+                        >
+                            Where are you located?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+
+                    <div id="faqAnswer3" class="faq-answer">
+                        <p>
+                            We have several locations around the city. Visit our
+            booking page for more information.
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <p id="faqStatus" aria-live="polite"></p>
+        </section>
+
 </section>
 		</main>
-		<footer>
+		<footer class="shadow-custom-footer">
 			<div class="footer-contacts">
                 <p>Contacts:</p>
                 <a href="tel:+77786319258">+ 1 234 567 89 10</a>
@@ -221,5 +298,7 @@
                 </div>
             </div>
 		</footer>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/interactions.js"></script>
 	</body>
 </html>

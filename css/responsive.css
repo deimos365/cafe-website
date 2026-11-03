@@ -150,7 +150,7 @@
 
 /* MOBILE: up to 767px */
 
-@media (max-width: 47.99rem) {
+@media (max-width: 64rem) {
 
     /* General */
     body {
@@ -880,7 +880,7 @@ summary:focus-visible {
     .history-grid p,
     .gallery-grid p,
     .plans-grid p {
-        font-size: 1.4em;
+        font-size: 0.7em;
     }
 
     .history-grid-1 img,
@@ -898,7 +898,7 @@ summary:focus-visible {
     .history-grid,
     .gallery-grid,
     .plans-grid {
-        width: 80%;
+        width: 90%;
     }
 
     .history-grid {

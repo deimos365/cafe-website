@@ -148,7 +148,7 @@ main {
 
 .feature-section {
     background: var(--surface-bg);
-    border: 1px solid var(--border-color);
+    /* border: 1px solid var(--border-color); */
     border-radius: 20px;
     padding: 28px;
     margin: 0 0 24px;
