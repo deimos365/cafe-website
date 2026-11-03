@@ -15,10 +15,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Shared form styles -->
+    <link rel="stylesheet" href="css/interactions.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/forms.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+
 </head>
 
 <body>
@@ -292,6 +294,91 @@
                 </form>
             </div>
         </section>
+
+        <!-- task 0: select elements and update content -->
+        <section class="feature-section max-width-12" id="task0">
+            <p class="task-label">TASK 0</p>
+            <h2>Welcome to Yummy Cafe</h2>
+            <p>
+                Enter your name to receive a personalized welcome message.
+            </p>
+
+            <form id="welcomeForm" class="inline-form">
+                <div class="form-group">
+                    <label for="visitorName">Your name</label>
+                    <input
+                        type="text"
+                        id="visitorName"
+                        name="visitorName"
+                        placeholder="Enter your name"
+                        autocomplete="given-name"
+                    >
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Say Hello
+                </button>
+            </form>
+
+            <p id="welcomeMessage" class="feedback" role="status" aria-live="polite">
+                Your welcome message will appear here.
+            </p>
+        </section>
+
+        <!-- task 1: change appearance with classes -->
+        <section class="feature-section max-width-12" id="task1">
+            <p class="task-label">TASK 1</p>
+            <h2>Choose Your Theme</h2>
+            <p>
+                Switch between light and dark themes.
+            </p>
+
+            <button
+                type="button"
+                id="themeToggle"
+                class="primary-button"
+                aria-pressed="false"
+            >
+                Switch to Dark Theme
+            </button>
+
+            <p class="helper-text">
+                Click the button again to restore the light theme.
+            </p>
+        </section>
+
+        <!-- Task 4: create and remove elements -->
+        <section class="feature-section max-width-12" id="task4">
+            <p class="task-label">TASK 4</p>
+            <h2>Your Favorite Menu Items</h2>
+            <p>
+                Add drinks or desserts to your personal favorites list.
+            </p>
+
+            <form id="favoriteForm" class="inline-form">
+                <div class="form-group">
+                    <label for="favoriteInput">Favorite item</label>
+                    <input
+                        type="text"
+                        id="favoriteInput"
+                        name="favoriteInput"
+                        placeholder="e.g. Caramel Latte"
+                    >
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Add Favorite
+                </button>
+            </form>
+
+            <p id="favoriteFeedback" class="feedback" role="status" aria-live="polite"></p>
+
+            <p id="favoriteCount" class="helper-text">
+                Favorites: 0
+            </p>
+
+            <ul id="favoriteList" class="favorite-list"></ul>
+        </section>
     </main>
 
     <footer class="shadow-custom-footer">
@@ -324,7 +411,9 @@
                 </div>
             </div>
 		</footer>
-
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/interactions.js"></script>
     <script src="js/register-validation.js"></script>
 </body>
 </html>
