@@ -7,13 +7,13 @@
 }
 
 .hero-article {
-    background-color: #fff;
+    background-color: var(--bg-primary);
     border-radius: 30px;
     height: auto;
 }
 
 h1 {
-    color: #6f4e37;
+    color: var(--accent-color);
 }
 
 .hero-1 {
@@ -60,13 +60,13 @@ h1 {
 .button-link {
     padding: 20px;
     border-radius: 20px;
-    background-color: #4a2c2a;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--accent-opposite);
 }
 
 .best-sellers {
     margin-top: 20px;
-    background-color: #fff;
+    background-color: var(--bg-primary);
     border-radius: 30px;
     height: 300px;
     display: flex;
@@ -94,7 +94,7 @@ h1 {
     margin-top: 20px;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: #fff;
+    background-color: var(--bg-primary);
     height: auto;
     display: flex;
     flex-direction: column;
@@ -106,7 +106,7 @@ h1 {
 .why-us h2 {
     max-width: 400px;
     text-align: center;
-    color: #6f4e37;
+    color: var(--accent-color);
     margin-left: 0%;
 }
 
@@ -181,7 +181,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--bg-primary);
     border-radius: 30px;
     height: auto;
     padding-top: 30px;
@@ -189,7 +189,7 @@ h1 {
 }
 
 .best-sellers {
-    background-color: #fef6ff;
+    background-color: var(--bg-accent);
     /* border: 1px solid black; */
 }
 
@@ -211,10 +211,10 @@ h1 {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    border: 2px solid  #6f4e37;
+    border: 2px solid  var(--accent-color);
     overflow: hidden;
-    background-color: #fff;
-    color: #6f4e37;
+    background-color: var(--bg-primary);
+    color: var(--accent-color);
 }
 
 .menu-item img {

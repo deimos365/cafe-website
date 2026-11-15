@@ -1,94 +1,4 @@
 
-/* General page layout */
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    background-color: #ffeae9;
-    color: #363636;
-    font-family: "Montserrat", sans-serif;
-    display: flex;
-    flex-direction: column;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-p {
-    margin: 0;
-}
-
-/* Header */
-
-header {
-    background-color: #fff;
-    min-height: 80px;
-    width: 98%;
-    margin: 10px auto 0;
-    border-radius: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    gap: 20px;
-}
-
-header > .header-icon {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    width: 200px;
-    flex-shrink: 0;
-}
-
-.header-icon p {
-    font-weight: 700;
-}
-
-.header-icon img {
-    height: 50px;
-    width: auto;
-}
-
-header > nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-header nav a,
-.footer-links a {
-    text-transform: uppercase;
-}
-
-header nav a:hover {
-    color: #a64b35;
-}
-
-header > .book-now {
-    width: 200px;
-    display: flex;
-    justify-content: flex-end;
-    flex-shrink: 0;
-}
-
-.book-now > a {
-    display: block;
-    background-color: #f9dca4;
-    padding: 15px 20px;
-    color: #6f4e37;
-    font-weight: bold;
-    border-radius: 20px;
-    border: 2px solid #6f4e37;
-    white-space: nowrap;
-}
 
 /* Main content */
 
@@ -108,7 +18,7 @@ main {
 }
 
 .contact-eyebrow {
-    color: #9b5c48;
+    color: var(--accent-color);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -129,7 +39,7 @@ main {
 /* Form card */
 
 .contact-card {
-    background-color: #fff;
+    background-color: var(--bg-primary);
     border-radius: 24px;
     padding: 40px;
     box-shadow: 0 8px 30px rgba(54, 54, 54, 0.08);
@@ -142,12 +52,12 @@ main {
 
 .contact-card .form-control {
     padding: 12px 14px;
-    border: 1px solid #d8d0cd;
+    border: 1px solid var(--accent-color);
     border-radius: 10px;
 }
 
 .contact-card .form-control:focus {
-    border-color: #9b5c48;
+    border-color: var(--accent-color);
     box-shadow: 0 0 0 0.2rem rgba(155, 92, 72, 0.18);
 }
 
@@ -156,7 +66,7 @@ main {
 }
 
 .contact-card .form-text {
-    color: #777;
+    color: var(--text-gray);
 }
 
 /* Validation states */
@@ -191,87 +101,28 @@ main {
 }
 
 .btn-send {
-    background-color: #6f4e37;
-    color: #fff;
-    border: 2px solid #6f4e37;
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    border: 2px solid var(--accent-color);
 }
 
 .btn-send:hover {
-    background-color: #533925;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
 }
 
 .btn-reset {
     background-color: transparent;
-    color: #6f4e37;
-    border: 2px solid #6f4e37;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
 }
 
 .btn-reset:hover {
-    background-color: #f9dca4;
-    color: #363636;
+    background-color: var(--accent-opposite);
+    color: var(--text-primary);
 }
 
-/* Footer */
 
-footer {
-    background-color: #363636;
-    color: #fff;
-    min-height: 300px;
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 30px 30px 0 0;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
-    padding: 60px 6% 40px;
-}
-
-footer p {
-    color: lightgray;
-}
-
-.footer-contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 1.1rem;
-}
-
-.footer-contacts a {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    overflow-wrap: anywhere;
-}
-
-#yummy-cafe {
-    color: #fff;
-}
-
-#rights {
-    margin-top: 30px;
-    font-size: 0.85rem;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    font-size: 0.9rem;
-}
-
-.footer-links p {
-    font-weight: 700;
-}
-
-.footer-links a:hover {
-    color: #f9dca4;
-}
 
 /* Tablet */
 
@@ -351,7 +202,7 @@ footer p {
 }
 
 .register-heading > p:last-child {
-    color: #666;
+    color: var(--text-primary);
     line-height: 1.7;
 }
 
@@ -362,7 +213,7 @@ footer p {
 }
 
 .contact-card fieldset {
-    border: 1px solid #e5dcd8;
+    border: 1px solid var(--text-gray);
     border-radius: 12px;
     padding: 16px 18px;
 }

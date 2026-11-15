@@ -7,14 +7,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--bg-primary);
     border-radius: 30px;
     height: auto;
     padding: 30px 0;
 }
 
 .best-sellers {
-    background-color: #fef6ff;
+    background-color: var(--bg-accent);
     /* border: 1px solid black; */
 }
 
@@ -37,10 +37,10 @@
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    border: 2px solid #6f4e37;
+    border: 2px solid var(--accent-color);
     overflow: hidden;
-    background-color: #fff;
-    color: #6f4e37;
+    background-color: var(--bg-primary);
+    color: var(--accent-color);
     min-width: 0;
 }
 
@@ -120,7 +120,7 @@ h2 {
     flex: 1;
     min-width: 0;
     padding: 14px 18px;
-    border: 2px solid #6f4e37;
+    border: 2px solid var(--accent-color);
     border-radius: 25px;
     font-size: 1em;
 }
@@ -128,17 +128,17 @@ h2 {
 #clearSearch,
 .category-btn {
     padding: 12px 20px;
-    border: 2px solid #6f4e37;
+    border: 2px solid var(--accent-color);
     border-radius: 25px;
-    background-color: white;
-    color: #6f4e37;
+    background-color: var(--bg-primary);
+    color:  var(--accent-color);
     cursor: pointer;
     font-size: 1em;
 }
 
 #clearSearch:hover,
 .category-btn:hover {
-    background-color: #f8f4ec;
+    background-color: var(--hover);
 }
 
 .category-filters {
@@ -149,8 +149,8 @@ h2 {
 }
 
 .category-btn.active {
-    background-color: #6f4e37;
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
 }
 
 #searchCount,
